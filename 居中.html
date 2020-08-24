@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2020/8/7</title>
+  <style>
+    .parent {
+      /* flex布局
+      display: flex;
+      justify-content: center;
+      align-items: center; */
+      /* position: relative; */
+      width: 400px;
+      height: 400px;
+      background: pink;
+      /* table-cell + margin auto;*/
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .son {
+      margin: auto;
+      width: 200px;
+      height: 200px;
+      background: hotpink;
+      /* position: absolute; */
+      /* auto margin 不固定大小;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; */
+
+      /* 
+      top: 50%;
+      left: 50%;
+      // 负 margin 技术 固定大小
+      margin-top: -100px;
+      margin-left: -100px;
+      // CSS3 transform 不固定
+      transform: translate(-50%,-50%); */
+    }
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="son">
+      <!-- <div style="width: 55px;height: 55px;background-color: yellow; margin: auto;"></div> -->
+    </div>
+  </div>
+</body>
+</html>

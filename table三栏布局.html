@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+  <style>
+    *{
+      padding: 0;margin: 0;
+      /*解决nav栏宽变化*/
+      box-sizing: border-box;
+    }
+    .wrapper{
+      min-width: 800px;max-width: 1280px;
+      border: #333333 1px solid;
+      margin: 0 auto;
+    }
+    header{
+      background-color: black;
+      color: #eee;
+    }
+    nav{
+      display: table-cell;
+      width: 100px;
+      padding: 10px;
+      background-color: #333333;
+      color: #eee;
+    }
+    nav li {
+      list-style-type: none;
+    }
+    article{
+      min-width: 400px;
+      display: table-cell;
+      background-color: #eee;
+      padding: 10px 20px;
+    }
+    aside{
+      display: table-cell;
+      width: 300px;
+      padding: 10px;
+      background-color: #666666;
+    }
+    footer{
+      font-size: 16px;
+      text-align: center;
+      background-color:black;
+      color: #eee;
+    }
+  </style>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>
+        简单的table局部技术实现流动中栏
+      </h1>
+    </header>
+  <nav>
+    <ul>
+      <li>link-1</li>
+      <li>link-3</li>
+      <li>link-2</li>
+      <li>link-4</li>
+    </ul>
+  </nav>
+ 
+  <article>
+      我们知道，CSS 可以把一个 HTML 元素的 display 属性设定为 table、table-row 和
+    table-cell。通过这种方法可以模拟相应 HTML 元素的行为。而通过 CSS 把布局中
+    的栏设定为 table-cell 有三个好处。
+    <br>
+     单元格（table-cell）不需要浮动就可以并排显示，而且直接为它们应用内边距也不
+    会破坏布局。
+    <br>
+     默认情况下，一行中的所有单元格高度相同，因而也不需要人造的等高栏效果了。
+    <br>
+     任何没有明确设定宽度的栏都是流动的。
+    <br>
+    这三个好处解决了本章前面学习布局时遇到的问题。然而，（这里一定有蹊跷，对
+    吧？）CSS3 表格行为在 IE7 及更低版本中并没有得到支持，而且也没有稳妥的补救
+    措施。如果你（或者你的客户）愿意摒弃 IE7，那么它就是一个既简单又可靠，而且
+    还很彻底的解决方案。如果真是这样，我绝对推荐你采用这个方案，前面所讲的各
+    种方案就当我没说。
+    关键是，你甚至都不需要用 div 外包装来扮演 table 和 tr 元素，仅仅是把三栏的
+    display 属性设定为 table-cell 就可以了。浏览器的排版引擎在碰到没有表行（tr）
+    的一组单元格时，会自动为它们添加表行，而在表行没有被 table 元素包围时，会
+    自动为表行添加 table。因此，你不需要多写任何标记，只要把每一栏的 display 属
+    性设定为 table-cell，剩下的事儿就可全部交给浏览器负责了。
+  </article>
+
+  <aside>
+      在图 5-5 所示固定宽度布局的 HTML 基础上，我们去掉了内部 div。而在 CSS 中，
+    把每一栏的 float:left 替换成了 display:table-cell，同时去掉了中栏的宽度设定。
+    好了，一个中栏流动、各栏同高，而且能够方便为内容添加内边距和边框的布局就
+    这么出炉了（参见图 5-12）！
+  </aside>
+  <footer>
+    一个中栏流动、各栏同高，而且能够方便为内容添加内边距和边框的布局就
+    这么出炉了（参见图 5-12）！
+  </footer>
+</div>
+</body>
+</html>

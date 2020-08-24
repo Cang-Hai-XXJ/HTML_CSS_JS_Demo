@@ -1,0 +1,270 @@
+<!-- 
+  要是有所得罪请原谅，本是出自一番好意，
+  只是想显点粗浅技艺，那才是我们的初衷。
+                  ————莎士比亚《仲夏夜之梦》 -->
+
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      padding: 2px 15px;
+      font: 20px Exo, helvetica, arial, sans-serif;
+      font-weight: 400;
+      color: #000;
+      /* background:#ffed53; */
+    }
+
+    nav a:hover {
+      color: #069;
+    }
+
+    /*    垂直菜单    */
+    .list-vertical {
+      width: 150px;
+      margin: 20px;
+      box-shadow: 9px 7px 12px #f8e004;
+    }
+
+    .list-vertical ul {
+      overflow: hidden;
+      border: 3px solid #f8e004;
+      border-radius: 3px;
+    }
+
+    .list-vertical li {
+      margin: 0 10px;
+      list-style-type: none;
+    }
+
+    .list-vertical li+li {
+      border-top: 2px solid #f8e004;
+    }
+
+    /*     水平菜单   */
+    .list-horizontal ul {
+      display: inline-block;
+      overflow: hidden;
+      margin: 20px;
+      border: 3px solid #007fff;
+      box-shadow: 12px 12px 12px #007fff;
+    }
+
+    .list-horizontal li {
+      float: left;
+      list-style-type: none;
+
+    }
+
+    .list-horizontal a {
+      padding: 10px 15px;
+    }
+
+    .list-horizontal li+li {
+      border-left: 2px solid #007fff;
+    }
+
+    /*  三级下拉菜单  */
+    /*添加视觉样式*/
+    .multi_drop_menu {
+      font: 1em helvetica, arial, sans-serif;
+      margin: 20px;
+    }
+
+    .multi_drop_menu a {
+      /*让链接充满列表项*/
+      display: block;
+      color: #555;
+      background-color: #eee;
+      /*链接的内边距*/
+      padding: .2em 1em;
+      /*分隔线宽度*/
+      border-width: 3px;
+      /*可以有颜色，也可以透明*/
+      border-color: transparent;
+    }
+
+    .multi_drop_menu a:hover {
+      /*悬停时文本颜色*/
+      color: #fff;
+      /*悬停时背景色*/
+      background-color: #aaa;
+    }
+
+    .multi_drop_menu a:active {
+      /*点击时背景变色*/
+      background: #fff;
+      /*点击时文本变色*/
+      color: #ccc;
+    }
+
+    /*添加功能样式*/
+    .multi_drop_menu * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /*强制 ul 包围 li*/
+    .multi_drop_menu ul {
+      float: left;
+    }
+
+    .multi_drop_menu li {
+      /*水平排列菜单项*/
+      float: left;
+      /*去掉默认的项目符号*/
+      list-style-type: none;
+      /*为子菜单提供定位上下文*/
+      position: relative;
+    }
+
+    .multi_drop_menu li a {
+      /*让链接填充列表项*/
+      display: block;
+      /*给每个链接添加一个右边框*/
+      border-right-style: solid;
+      /*背景只出现在内边距区域后面*/
+      background-clip: padding-box;
+      /*去掉链接的下划线*/
+      text-decoration: none;
+    }
+
+    .multi_drop_menu li:last-child a {
+      border-right-style: none;
+    }
+
+    /*临时隐藏低级菜单*/
+    .multi_drop_menu li ul {
+      display: none;
+    }
+
+    .multi_drop_menu li ul {
+      width: 9em;
+    }
+
+    .multi_drop_menu li li a {
+      /*去掉继承的右边框*/
+      border-right-style: none;
+      /*添加上边框*/
+      border-top-style: solid;
+    }
+
+    /* 添加的功能样式 */
+    .multi_drop_menu li ul {
+      /*临时显示二级下拉菜单*/
+      display: block;
+      /*相对于父菜单项定位*/
+      position: absolute;
+      /*左边与父菜单项对齐*/
+      left: 0;
+      /*顶边与父菜单项底边对齐*/
+      top: 100%;
+    }
+
+    .multi_drop_menu li li {
+      /*停止浮动，恢复堆叠*/
+      float: none;
+    }
+
+    .multi_drop_menu li li ul {
+      /*继续隐藏三级下拉菜单*/
+      display: none;
+    }
+
+    .multi_drop_menu li ul {
+      /*隐藏二级下拉菜单*/
+      display: none;
+      /*相对于父菜单项定位*/
+      position: absolute;
+      /*左边与父菜单项对齐*/
+      left: 0;
+      /*顶边与父菜单项底边对齐*/
+      top: 100%;
+    }
+
+    .multi_drop_menu li:hover>ul {
+      /*父元素悬停时显示*/
+      display: block;
+    }
+
+    /*隐藏二级菜单*/
+    li ul {
+      display: none;
+    }
+
+    /*显示二级菜单*/
+    li:hover>ul {
+      display: block;
+    }
+
+    .multi_drop_menu li li ul {
+      /*相对于父菜单定位*/
+      position: absolute;
+      /*与父菜单右侧对齐*/
+      left: 100%;
+      /*与父菜单项顶边对齐*/
+      top: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="list-vertical">
+    <ul>
+      <li><a href="">Tony</a></li>
+      <li><a href="">Stark</a></li>
+      <li><a href="">Jack</a></li>
+      <li><a href="">Jenny</a></li>
+      <li><a href="">Jerry</a></li>
+    </ul>
+  </nav>
+  <nav class="list-horizontal">
+    <ul>
+      <li><a href="">Tony</a></li>
+      <li><a href="">Stark</a></li>
+      <li><a href="">Jack</a></li>
+      <li><a href="">Jenny</a></li>
+      <li><a href="">Jerry</a></li>
+    </ul>
+  </nav>
+  <nav class="multi_drop_menu">
+    <!-- 一级开始 -->
+    <ul>
+      <li><a href="#">Power</a></li>
+      <li><a href="#">Money</a></li>
+      <li><a href="#">Love</a></li>
+      <li><a href="#">Fame</a>
+        <!-- 二级开始 -->
+        <ul>
+          <li><a href="#">Sports Star</a></li>
+          <li><a href="#">Movie Star</a></li>
+          <li><a href="#">Rock Star</a>
+            <!-- 三级开始 -->
+            <ul>
+              <li><a href="#">Bruce Springsteen</a></li>
+              <li><a href="#">Bono</a></li>
+              <li><a href="#">Mick Jagger</a></li>
+              <li><a href="#">Bob Dylan</a></li>
+            </ul>
+            <!-- 三级结束 -->
+          </li>
+          <li><a href="#">Web Designer</a></li>
+        </ul>
+        <!-- 二级结束 -->
+      </li>
+    </ul>
+    <!-- 一级结束 -->
+  </nav>
+</body>
+
+</html>

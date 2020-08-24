@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /*由于全部设置为border-box，wrapper的content要减去边框大小*/
+    }
+    .wrapper {
+      /*开启BFC父元素才能正确计算浮动元素高度*/
+      overflow: hidden;
+      width: 962px;
+      margin: 0 auto;
+      border: 1px solid;
+      /* 长单词换行 */
+      word-wrap: break-word;
+    }
+    header {
+      background-color: #333333;
+      color: aliceblue;
+    }
+    nav {
+      width: 200px;
+      background-color: #cccccc;
+      float: left;
+    }
+    nav li { 
+       list-style-type:none; 
+    }
+    nav img { 
+      max-width: 100%;
+    }
+    article {
+      width: 460px;
+      padding: 10px 20px;
+      background-color:#666666;
+      float: left;
+    }
+    aside {
+      width: 300px;
+      background-color: #cccccc;
+      float: left;
+    }
+    footer {
+      font-size: 16xpx;
+      clear: left;
+      background-color: #333333;
+      color: aliceblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>本节，我来教你创建三栏布局。</h1>
+    </header>
+    <nav>
+      <li><a href="">link1</a></li>
+      <li><a href="">link1</a></li>
+      <li><a href="">link1</a></li>
+      <li><a href="">link1</a></li>
+      <li><a href="">link1</a></li>
+      <li>这是一个很长的单词:electroendfdfsdcephalography</li>
+      <img src="C:\Users\Clreable\Pictures\Saved Pictures\yun.jpg" alt="">这是一个大图片
+    </nav>
+    <article>
+       本节，我来教你创建三栏布局。只要掌握了创建三栏布局的技术，你想搞多少栏就
+      能搞多少栏。由于本章主要关注页面结构，为了让大家直观地看到整个过程到底发
+      生了什么，咱们要给每个栏加上深浅不同的背景色。
+      就从一个简单的居中的单栏固定布局开始吧。为了让布局好看一点，我写了一些简
+      单的样式。为节省版面，我们没有给出这些样式，实际上它们对本节要讲的技术没
+      有任何影响。主要标记的 ID 是 wrapper（外包装），这个容器里包含了一栏。
+       如图 5-1 所示，通过给整个外包装设定宽度值，并将其水平外边距设定为 auto，这
+      个单栏布局在页面上居中了。随着向里添加内容，这一栏的高度会相应增加。外包
+      装中的 article 元素本质上就是一个没有宽度的块级盒子（关于“没有宽度的盒子”，
+      请参见 3.2 节），它水平扩展填满了外包装。下面，我们再向外包装里添加一个导航
+      元素，让它作为第二栏。</article>
+    <aside>
+      如图 5-3 所示，通过把三个浮动容器的总宽度设定为恰好等于外包装的宽度（150 + 
+      600 + 210 = 960），就有了三栏布局的框架。就用这种办法，我可以想加多少栏就加
+      多少栏，只要它们的总宽度等于外包装的宽度即可。当然，多栏布局通常都有与布
+      局同宽的页眉和页脚，下面我们就来添加
+    </aside>
+    <footer>这样，我们就有了三栏布局的框架.为页脚应用 应用 clear:both，就可clear:both，就可
+      以阻止它向上移动</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{padding: 0;margin: 0;}
+    .clearfix::after {
+      content:"";        
+      display: block;        
+      /* height:0;         */
+      clear:both;        
+      /* visibility:hidden;  */
+    }
+    #wrapper{
+      min-width: 600px;max-width: 1280px;
+      border: #333333 1px solid;
+      margin: 0 auto;
+    }
+    header{
+      background-color: black;
+      color: #eee;
+    }
+    nav{
+      padding: 10px;
+      background-color: #666666;
+      color: #eee;  
+    }
+    section#branding img{
+      width: 100%;
+      height: 300px;
+    }
+    section#feature_area article {
+      float:left; 
+      width:426.6px; 
+      /*对于作为栏的容器，只能添加垂直内边距*/ 
+      padding:10px 0; 
+      background:#fff; 
+      border-top:4px solid #f7be84;
+    }
+    section#promo_area article {
+      float:left; 
+      width:320px; 
+      /*对于作为栏的容器，只能添加垂直内边距*/ 
+      padding:10px 0; 
+      background:#fff; 
+      border-top:4px solid #f7be84;
+    }
+    section#promo_area article .inner { 
+      margin:10px 20px; 
+      padding:5px; 
+      background:#fff; 
+      border:5px solid; 
+    }
+    section#feature_area article .inner { 
+      margin:10px 10%; 
+      padding:5px; 
+      background:#fff; 
+      border:5px solid; 
+    }
+    section#feature_area article:nth-child(1) .inner { 
+    border-color:#d7dd6f; 
+    } 
+    section#feature_area article:nth-child(2) .inner { 
+    border-color:#f6dec5; 
+    } 
+    section#feature_area article:nth-child(3) .inner { 
+    border-color:#d1d8e4; 
+    }
+    footer{
+      font-size: 16px;
+      text-align: center;
+      background-color:black;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper"> 
+    <header> 
+      <h1>Full-width content</h1> 
+    </header> 
+    <nav> 
+      <p>Navigation menus go here</p> 
+    </nav> 
+    <section id="branding"> 
+      <img src="images/core.jpg" alt="Grand" /> 
+    </section><!-- branding 结束 --> 
+    <section id="feature_area" class="clearfix"> 
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text feature_area feature_area feature_area</p> 
+        </div> 
+      </article>
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text feature_area feature_area feature_area</p> 
+        </div> 
+      </article>
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text feature_area feature_area feature_area</p> 
+        </div> 
+      </article>
+    </section><!-- feature_area 结束--> 
+    <section id="promo_area" class="clearfix"> 
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text  promo_area promo_area promo_area promo_area promo_area</p> 
+        </div> 
+      </article>
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text promo_area promo_area promo_area promo_area promo_area</p> 
+        </div> 
+      </article> 
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text promo_area promo_area promo_area promo_area promo_area</p> 
+        </div> 
+      </article> 
+      <article> 
+        <div class="inner"> 
+          <p>Lorem Ipsum text promo_area promo_area promo_area promo_area promo_area</p> 
+        </div> 
+      </article> 
+    </section><!-- promo_area 结束--> 
+    <footer> 
+    <p>A CSS template from <a href="http://www.stylinwithcss.com"><em> 
+    Stylin' with CSS, Third Edition</em></a> by Charles Wyke-Smith</p> 
+    </footer> 
+   </div>
+</body>
+</html>
