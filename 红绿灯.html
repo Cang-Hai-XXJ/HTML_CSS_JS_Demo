@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zn">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    .container {}
+
+    #deng {
+      width: 100px;
+      height: 100px;
+      border-radius: 50px;
+      position: absolute;
+      /* top: 30%;
+      left: 50%;
+      transform: translate(-50, -50); */
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  </style>
+  <script>
+    window.onload = () => {
+      function sleep(duration) {
+        return new Promise(function (resolve) {
+          setTimeout(resolve, duration);
+        })
+      }
+      async function changeColor(duration, color) {
+        document.getElementById("deng").style.background = color;
+        await sleep(duration);
+
+      }
+      async function main() {
+        while (true) {
+          await changeColor(3000, "green");
+          await changeColor(1000, "yellow");
+          await changeColor(2000, "red");
+        }
+      }
+      main()
+    }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div id="deng"></div>
+  </div>
+</body>
+
+
+</html>
