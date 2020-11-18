@@ -1,7 +1,8 @@
-let flag = 1 
-console.log(102^flag);
+let flag = 1
+console.log(102 ^ flag);
 
 console.log(-10.0125 >> 0); //-10
+console.log(~~-10.0125); //-10
 console.log(1 / 0, -1 / 0); //Infinity
 console.log(1 << 2); //2^2
 
@@ -12,10 +13,10 @@ var b = 2
 // b ^= a
 // a ^= b
 // ES6
-var [b,a] = [a,b]
-console.log(a,b);
+var [b, a] = [a, b]
+console.log(a, b);
 
-console.log((!(~+[])+{})[--[~+""][+[]]*[~+[]]+~~!+[]]+({}+[])[[~!+[]]*~+[]]);
+console.log((!(~+[]) + {})[--[~+""][+[]] * [~+[]] + ~~!+[]] + ({} + [])[[~!+[]] * ~+[]]);
 
 // 按位非操作的本质：操作数的负值减 1。
 var num1 = 25; // 二进制 00000000000000000000000000011001 
