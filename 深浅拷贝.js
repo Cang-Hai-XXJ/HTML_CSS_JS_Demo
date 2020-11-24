@@ -47,7 +47,7 @@
     这个深拷贝还有很多问题：怎么解决递归过深？怎么拷贝Symbol？循环引用怎么解决？（hash）
 
 
-    TD转职脚本（待优化）
+   // TD转职脚本（待优化）
     var button = document.getElementsByClassName("btn-ok sp db")[0]
     let timer = setInterval(() => {
         if (new Date().getMinutes() === 0)

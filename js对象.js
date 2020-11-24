@@ -14,9 +14,13 @@
 // })
 var o = {
   get a() {
+    console.log('aaaaaaaaa');
     return 1
   }
 }
-console.log(Object.getOwnPropertyDescriptor(o));
+// console.log(Object.getOwnPropertyDescriptor(o));
 
-console.log(o.a);
+
+// for (key in o) {
+//   console.log(key);
+// }
